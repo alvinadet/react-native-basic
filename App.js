@@ -1,36 +1,23 @@
 import React, { Component } from 'react';
-import { StyleSheet, Text, View, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+
 import Header from './components/Header';
-
-export default class App extends Component {
-  Tekan = () => {
-    alert('oke');
-  };
-
+import Body from './components/Body';
+class App extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <View style={{ backgroundColor: '#D0D0D0', padding: 15 }}>
-          <TouchableOpacity
-            onPress={() => {
-              this.Tekan();
-            }}>
-            <Text> Click ME!</Text>
-          </TouchableOpacity>
-        </View>
-        <Text>Alvin Adetya dan Oke</Text>
-        <Header color="yellow" name="hallo react native" />
-        <Header color="red" name="hallo" />
+      <View style={style.container}>
+        <Header />
+        <Body />
       </View>
     );
   }
 }
 
-const styles = StyleSheet.create({
+export default App;
+
+const style = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    flex: 1
   }
 });

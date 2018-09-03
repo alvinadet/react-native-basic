@@ -1,19 +1,22 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 
 class Header extends Component {
-  state = {
-    nama: 'alvin'
-  };
-
   render() {
-    const { color, name } = this.props;
     return (
-      <View style={{ backgroundColor: color }}>
-        <Text>{name}</Text>
+      <View style={style.Header}>
+        <Text>HEADER</Text>
       </View>
     );
   }
 }
 
 export default Header;
+
+const style = StyleSheet.create({
+  Header: {
+    flex: 0.5,
+    backgroundColor: 'yellow',
+    marginTop: 20
+  }
+});
