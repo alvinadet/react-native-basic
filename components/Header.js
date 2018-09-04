@@ -1,22 +1,30 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Header, Body, Title } from 'native-base';
 
-class Header extends Component {
+class Menu extends Component {
+  async componentDidMount() {
+    await Font.loadAsync({
+      Roboto: require('native-base/Fonts/Roboto.ttf'),
+      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
+    });
+  }
   render() {
     return (
-      <View style={style.Header}>
-        <Text>HEADER</Text>
-      </View>
+      <Header>
+        <Body>
+          <Title style={{ fontFamily: 'Roboto_medium' }}>To Do List</Title>
+        </Body>
+      </Header>
     );
   }
 }
 
-export default Header;
+export default Menu;
 
-const style = StyleSheet.create({
-  Header: {
-    flex: 0.5,
-    backgroundColor: 'yellow',
-    marginTop: 20
-  }
-});
+// const style = StyleSheet.create({
+//   Header: {
+//     flex: 0.5,
+//     backgroundColor: 'yellow',
+//     marginTop: 20
+//   }
+// });

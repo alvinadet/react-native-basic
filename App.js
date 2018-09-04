@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
+import { Container } from 'native-base';
 
-import Header from './components/Header';
-import Body from './components/Body';
+import Menu from './components/Header';
+import Main from './components/Body';
+
 class App extends Component {
   render() {
     return (
-      <View style={style.container}>
-        <Header />
-        <Body />
-      </View>
+      <Container>
+        <Menu style={{ justify: 'center' }} />
+        <Main />
+      </Container>
     );
   }
 }

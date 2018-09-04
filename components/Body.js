@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { Content, Text } from 'native-base';
 
-export default class componentName extends Component {
+export default class Main extends Component {
   render() {
     return (
-      <View style={style.Body}>
-        <Text> Ini Body</Text>
-      </View>
+      <Content>
+        <Text>INI BELAJAR</Text>
+      </Content>
     );
   }
 }
 
-const style = StyleSheet.create({
-  Body: {
-    flex: 5,
-    backgroundColor: 'aqua'
-  }
-});
+// const style = StyleSheet.create({
+//   Body: {
+//     flex: 5,
+//     backgroundColor: 'aqua'
+//   }
+// });
