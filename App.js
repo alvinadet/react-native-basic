@@ -9,7 +9,7 @@ class App extends Component {
   render() {
     return (
       <Container>
-        <Menu style={{ justify: 'center' }} />
+        <Menu />
         <Main />
       </Container>
     );
@@ -17,9 +17,3 @@ class App extends Component {
 }
 
 export default App;
-
-const style = StyleSheet.create({
-  container: {
-    flex: 1
-  }
-});
