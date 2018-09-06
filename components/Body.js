@@ -75,12 +75,12 @@ export default class Main extends Component {
             <Text>Banyak Data : {this.state.count} </Text>
           </List>
         </Content>
-        <Fab
+        {/* <Fab
           style={{ backgroundColor: '#5067FF' }}
           position="bottomRight"
-          onPress={() => this.setState({ active: !this.state.active })}>
+          onPress={() => this.props.FormAdd}>
           <Icon name="add" />
-        </Fab>
+        </Fab> */}
       </Container>
     );
   }

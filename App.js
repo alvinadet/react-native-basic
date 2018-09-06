@@ -1,19 +1,24 @@
 import React, { Component } from 'react';
-import { StyleSheet } from 'react-native';
-import { Container } from 'native-base';
+import { createStackNavigator } from 'react-navigation';
 
-import Menu from './components/Header';
-import Main from './components/Body';
+// import { Menu } from './components/index';
+// import Main from './components/Body';
 
-class App extends Component {
-  render() {
-    return (
-      <Container>
-        <Menu />
-        <Main />
-      </Container>
-    );
+import { List, Add } from './screen/index';
+
+const App = createStackNavigator({
+  Home: {
+    screen: List,
+    navigationOptions: {
+      headerTitle: 'Todo List'
+    }
+  },
+  CreateData: {
+    screen: Add,
+    navigationOptions: {
+      headerTitle: 'Create Data'
+    }
   }
-}
+});
 
 export default App;
