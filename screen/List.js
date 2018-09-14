@@ -6,6 +6,9 @@ import { Main } from '../components/index';
 import { Icon, Fab, View } from 'native-base';
 
 export default class componentName extends Component {
+  state = {
+    number: ""
+  }
   render() {
     return (
       <Container>

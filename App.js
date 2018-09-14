@@ -1,24 +1,23 @@
-import React, { Component } from 'react';
-import { createStackNavigator } from 'react-navigation';
+import React from 'react';
+import { AppRegistry } from 'react-native';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 
-// import { Menu } from './components/index';
-// import Main from './components/Body';
+import AppReducer from './src/reducers/AppReducer';
+import AppWithNavigationState from './src/components/AppNavigator';
 
-import { List, Add } from './screen/index';
+class ReduxExampleApp extends React.Component {
+  store = createStore(AppReducer);
 
-const App = createStackNavigator({
-  Home: {
-    screen: List,
-    navigationOptions: {
-      headerTitle: 'Todo List'
-    }
-  },
-  CreateData: {
-    screen: Add,
-    navigationOptions: {
-      headerTitle: 'Create Data'
-    }
+  render() {
+    return (
+      <Provider store={this.store}>
+        <AppWithNavigationState />
+      </Provider>
+    );
   }
-});
+}
 
-export default App;
+AppRegistry.registerComponent('ReduxExample', () => ReduxExampleApp);
+
+export default ReduxExampleApp;
