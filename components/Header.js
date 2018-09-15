@@ -1,36 +1,40 @@
 import React, { Component } from 'react';
-import { Header, Body, Title, Left, Right, Root } from 'native-base';
-import { Font, AppLoading } from 'expo';
-
-class Menu extends Component {
-  state = {
-    loading: true
-  };
-  async componentWillMount() {
-    await Font.loadAsync({
-      Roboto: require('native-base/Fonts/Roboto.ttf'),
-      Roboto_medium: require('native-base/Fonts/Roboto_medium.ttf')
-    });
-    this.setState({ loading: false });
-  }
+import {
+  Container,
+  Header,
+  Left,
+  Body,
+  Right,
+  Title,
+  connectStyle
+} from 'native-base';
+class HeaderTitle extends Component {
+  
   render() {
-    if (this.state.loading) {
-      return (
-        <Root>
-          <AppLoading />
-        </Root>
-      );
-    }
+    const styles = this.props.style;
+   
     return (
-      <Header>
-        <Left />
-        <Body>
-          <Title>Hai</Title>
-        </Body>
-        <Right />
-      </Header>
+      <Container>
+        <Header>
+          <Left />
+          <Body>
+            <Title>Header</Title>
+          </Body>
+          <Right />
+        </Header>
+      </Container>
     );
   }
 }
+const styles = {
+  container: {
+    flex: 1,
+    backgroundColor: 'green',
+  },
+  textContent: {
+    fontSize: 20,
+    color: 'red',
+  }
+},
 
-export default Menu;
+export default  connectStyle('', styles)(HeaderTitle)
